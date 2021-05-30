@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Chapter 4 Assignment</title>
+
+	<script>
+		function input_output(){
+			var hours_worked  = prompt("How many hours worked?","");
+			var hourly_pay_rate = prompt("What is your hourly wage?","");
+			var tax_rate = prompt("What is your tax rate?","");
+			
+			hourly_pay_rate = parseFloat(hourly_pay_rate).toFixed(2);
+			
+			document.write("<h1>Hours Worked:</h1>" +"\t" + "<h1>"+ hours_worked + "</h1>");
+			document.write("<h1>Hourly Rate:</h1>"+"\t" + "<h1>" + "$" + hourly_pay_rate+"</h1>");
+			document.write("<h1>Tax Rate:</h1>"+ "\t" +"<h1>" + tax_rate + "%</h1>");		
+			
+			calculate_pay(hours_worked, hourly_pay_rate, tax_rate);
+	
+		
+		}
+		
+			function calculate_pay(hours_worked, hourly_pay_rate, tax_rate){
+	
+			var gross_pay = hours_worked * hourly_pay_rate;
+			var tax_amount = (tax_rate/100) * gross_pay;
+			var net_pay = gross_pay - tax_amount;
+			
+			net_pay = parseFloat(net_pay).toFixed(2);
+			
+			document.write("<h1>Net Pay = </h1>"+"\t" + "<h1>" + "$" + net_pay +"</h1>");	
+
+		}	
+	</script>
+</head>
+<style>
+	body{
+		background-color: lightgreen;
+	}
+</style>
+<body>
+	
+	<script>
+		input_output(); 
+
+	</script>
+
+</body>
+</html>
